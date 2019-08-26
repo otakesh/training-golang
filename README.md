@@ -1,0 +1,2 @@
+# training-golang
+try tutorials
