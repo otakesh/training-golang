@@ -7,5 +7,6 @@ https://medium.com/learning-the-go-programming-language/calling-go-functions-fro
 * Use the //export comment to annotate functions you wish to make accessible to other languages.
 * An empty main function must be declared.
 * `go build -o awesome.so -buildmode=c-shared main.go`
+  * a34b7d2b0adaf3e0f81977a2bcac2834  awesome.so md5sum at mac
 
 注意点をソースに書き込みたかったけど、コメントでannotateしている==parseされている==コメントがかけない、みたい
