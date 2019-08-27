@@ -32,4 +32,5 @@ func Log(msg string) int {
 
 func main() {}
 
-// See awesome.go GitHub
+// https://medium.com/learning-the-go-programming-language/calling-go-functions-from-other-languages-4c7d8bcc69bf
+// https://golang.org/cmd/cgo/#hdr-C_references_to_Go
