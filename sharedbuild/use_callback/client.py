@@ -8,13 +8,17 @@ class GoSlice(Structure):
                 ("len", c_longlong), ("cap", c_longlong)]
 
 
-@CFUNCTYPE(c_int, POINTER(c_char), c_int, POINTER(c_char), c_int, POINTER(c_char), c_int)
-def bytes2int(b0, l0, b1, l1, b2, l2):
+class ByteArray(Structure):
+    _fields_ = [("data", POINTER(c_char)), ("len", c_longlong)]
+
+
+@CFUNCTYPE(c_int, ByteArray, ByteArray, ByteArray)
+def bytes2int(ba0, ba1, ba2):
     print("bytes2int_func in python")
     total = 0
-    for b, l in zip((b0, b1, b2), (l0, l1, l2)):
-        print(b[:l])
-        total += l
+    for ba in (ba0, ba1, ba2):
+        print(ba.data[:ba.len])
+        total += ba.len
     return 123000 + total
 
 
