@@ -4,7 +4,7 @@
 [code example](./buildshare)
 * https://golang.org/cmd/cgo/#hdr-C_references_to_Go
   * Using //export in a file places a restriction on the preamble
-  * `//export <FUNCTION_NAME>`exportの前にスペース入れない
+  * `//export <FUNCTION_NAME>`export directive の前にスペース入れない
 * https://medium.com/learning-the-go-programming-language/calling-go-functions-from-other-languages-4c7d8bcc69bf
   * The package must be a main package. The compiler will build the package and all of its dependencies into a single shared object binary.
   * The source must import the pseudo-package “C”.
@@ -56,6 +56,11 @@ def py_cmp_func(a, b):
 * gohttplib
   * https://qiita.com/nothingcosmos/items/dd591055b9da1e713b9a
   * https://github.com/shazow/gohttplib/blob/master/gohttplib.go
+
+## reference
+* https://godoc.org/github.com/gophersjp/go/src/cmd/cgo
+* https://qiita.com/yugui/items/e71d3d0b3d654a110188
+* https://qiita.com/yugui/items/cc490d080e0297251090
 
 ## environment
 
