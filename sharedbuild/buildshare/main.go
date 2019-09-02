@@ -7,6 +7,7 @@ import (
 	"math"
 	"sort"
 	"sync"
+	"unsafe"
 )
 
 var count int
@@ -28,6 +29,18 @@ func Log(msg string) int {
 	fmt.Println(msg)
 	count++
 	return count
+}
+
+//export retString
+func retString() (*C.char, int) {
+	msg := "this is retrun string"
+	return C.CString(msg), len(msg)
+}
+
+//export retSlice
+func retSlice() (unsafe.Pointer, int, int) {
+	bmsg := []byte("this is return byte slice")
+	return C.CBytes(bmsg), len(bmsg), cap(bmsg)
 }
 
 func main() {}

@@ -1,4 +1,4 @@
-from ctypes import POINTER, c_longlong, c_double, c_int, c_void_p, c_char_p, cdll, Structure, CFUNCTYPE, POINTER, sizeof, CDLL
+from ctypes import POINTER, c_longlong, c_double, c_int, c_void_p, c_char_p, cdll, Structure, CFUNCTYPE, POINTER, sizeof, CDLL, c_char
 import logging
 log = logging.getLogger(__name__)
 lib = cdll.LoadLibrary("./awesome.so")
@@ -38,3 +38,17 @@ msg = GoString(b"Hello Python!", 13)
 print(lib.Log(msg))
 msg = GoString(b"See you!", 8)
 print(lib.Log(msg))
+
+lib.retString.restype = GoString
+retString = lib.retString()
+print(type(retString), retString.p[:])
+
+
+class GoBytes(Structure):
+    _fields_ = [("data", POINTER(c_char)),
+                ("len", c_longlong), ("cap", c_longlong)]
+
+
+lib.retSlice.restype = GoBytes
+retSlice = lib.retSlice()
+print(type(retSlice), retSlice.data[:retSlice.len], retSlice.cap)

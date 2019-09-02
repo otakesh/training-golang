@@ -69,30 +69,7 @@ extern "C" {
 #endif
 
 
-extern GoInt Add(GoInt p0, GoInt p1);
-
-extern GoFloat64 Cosine(GoFloat64 p0);
-
-extern void Sort(GoSlice p0);
-
-extern GoInt Log(GoString p0);
-
-/* Return type for retString */
-struct retString_return {
-	char* r0;
-	GoInt r1;
-};
-
-extern struct retString_return retString();
-
-/* Return type for retSlice */
-struct retSlice_return {
-	void* r0;
-	GoInt r1;
-	GoInt r2;
-};
-
-extern struct retSlice_return retSlice();
+extern void Start();
 
 #ifdef __cplusplus
 }

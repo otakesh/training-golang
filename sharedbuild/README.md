@@ -13,6 +13,7 @@
 * `go build -o awesome.so -buildmode=c-shared main.go && python client.py`
 * http://snowsyn.net/2016/09/11/creating-shared-libraries-in-go/
 * https://dev.to/mattn/call-go-function-from-c-function-1n3
+* exportした関数のタプル戻り値は、.restype = Strucutreで受けられる。Goのポインタは含めないのでCのポインタにする必要はある。
 
 ## pass callback function to go c-shared library
 ### Python ctypes
@@ -61,6 +62,7 @@ def py_cmp_func(a, b):
 * https://godoc.org/github.com/gophersjp/go/src/cmd/cgo
 * https://qiita.com/yugui/items/e71d3d0b3d654a110188
 * https://qiita.com/yugui/items/cc490d080e0297251090
+* https://blog.golang.org/c-go-cgo
 
 ## environment
 
