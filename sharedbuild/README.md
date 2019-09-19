@@ -10,13 +10,13 @@
   * The source must import the pseudo-package “C”.
   * Use the //export comment to annotate functions you wish to make accessible to other languages.
   * An empty main function must be declared.
-* `go build -o awesome.so -buildmode=c-shared main.go && python clinet.py`
+* `go build -o awesome.so -buildmode=c-shared main.go && python client.py`
 * http://snowsyn.net/2016/09/11/creating-shared-libraries-in-go/
 * https://dev.to/mattn/call-go-function-from-c-function-1n3
 
 ## pass callback function to go c-shared library
 ### Python ctypes
-[code example](./cfuntype)
+[code example](./ctypefunc)
 * https://docs.python.org/ja/3/library/ctypes.html#callback-functions
   * C の呼び出し可能な関数ポインタを作成(create C callable function pointers)
   * https://docs.python.org/ja/3/library/ctypes.html#ctypes.CFUNCTYPE
